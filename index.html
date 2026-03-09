@@ -5,34 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-List</title>
   <link rel="stylesheet" href="styles.css">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
+
 <body>
+
   <!-- Background particles -->
   <div class="particles"></div>
-  
-  <!-- Main app container -->
+
   <div class="app animate__animated animate__fadeInUp">
-    <!-- Header section -->
+
+    <!-- Header -->
     <div class="header">
       <div class="header-content">
         <span class="material-icons-outlined app-icon">checklist_rtl</span>
         <h1>Todo-List</h1>
-        <div class="/-counter">
+
+        <div class="task-counter">
           <span id="taskCount">0</span> tasks
         </div>
       </div>
+
       <div class="theme-toggle" id="themeToggle">
         <span class="material-icons-outlined">dark_mode</span>
       </div>
     </div>
 
-    <!-- Quick stats -->
+    <!-- Stats -->
     <div class="stats-section">
+
       <div class="stat-card">
         <span class="material-icons-outlined">assignment</span>
         <div>
@@ -40,6 +48,7 @@
           <div class="stat-label">Total</div>
         </div>
       </div>
+
       <div class="stat-card">
         <span class="material-icons-outlined">task_alt</span>
         <div>
@@ -47,6 +56,7 @@
           <div class="stat-label">Done</div>
         </div>
       </div>
+
       <div class="stat-card">
         <span class="material-icons-outlined">schedule</span>
         <div>
@@ -54,57 +64,78 @@
           <div class="stat-label">Pending</div>
         </div>
       </div>
+
     </div>
 
-    <!-- Task input section -->
+    <!-- Input Section -->
     <div class="input-section">
-      <div class="input-wrapper">
-        <span class="material-icons-outlined input-icon">add_task</span>
-        <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="100" />
-        <div class="input-actions">
-          <input type="color" id="colorInput" value="#6366f1" title="Choose task color">
-         
-          <!-- Add priority drop down below -->
 
+      <div class="input-wrapper">
+
+        <span class="material-icons-outlined input-icon">add_task</span>
+
+        <input 
+          type="text"
+          id="taskInput"
+          placeholder="What needs to be done?"
+          maxlength="100"
+        />
+
+        <div class="input-actions">
+
+          <!-- Task Color -->
+          <input 
+            type="color"
+            id="colorInput"
+            value="#6366f1"
+            title="Choose task color"
+          >
+
+          <!-- Priority Dropdown (NEW FEATURE) -->
+          <select id="priorityInput">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+
+          <!-- Add Task Button -->
           <button id="addTaskBtn" title="Add task">
             <span class="material-icons-outlined">add</span>
           </button>
+
         </div>
       </div>
+
     </div>
 
-    <!-- Filter and sort controls -->
-    <div class="controls-section">
-      
-        <!-- Add filter buttons below -->
-
-
-      <div class="sort-controls">
-        
-        <!-- Add sorting dropdown below -->
-         
-      </div>
-    </div>
-
-    <!-- Task list -->
+    <!-- Task List -->
     <div class="task-list-container">
+
       <ul id="taskList"></ul>
+
       <div class="empty-state" id="emptyState">
+
         <span class="material-icons-outlined">task_alt</span>
+
         <h3>No tasks yet</h3>
+
         <p>Add your first task to get started!</p>
+
       </div>
+
     </div>
+
   </div>
 
-  <!-- Floating action button for mobile -->
+  <!-- Floating Add Button -->
   <button class="fab" id="fabBtn" title="Add new task">
     <span class="material-icons-outlined">add</span>
   </button>
 
-  <!-- Toast notifications container -->
+  <!-- Toast Notifications -->
   <div class="toast-container" id="toastContainer"></div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
