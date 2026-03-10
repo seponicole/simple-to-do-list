@@ -97,6 +97,7 @@ body::before {
   max-width: 500px;
   margin: 0 auto;
   background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -627,6 +628,7 @@ body::before {
 
 .toast {
   background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: 12px;
